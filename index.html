@@ -4,36 +4,53 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Burger Mania | Street Food Premium</title>
-  <meta name="description" content="Burger Mania – burgers, tacos et spécialités orientales dans une ambiance moderne et premium." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root{
-      --bg:#0c0806;--card:#15100c;--gold:#e7be75;--text:#fff;--muted:#cbb9a3;
+      --bg:#0c0806;
+      --gold:#e7be75;
+      --text:#fff;
+      --card:#15100c;
+      --muted:#cbb9a3;
     }
-    *{margin:0;padding:0;box-sizing:border-box}
-    body{font-family:Inter,sans-serif;background:linear-gradient(#120c09,#0b0705);color:var(--text)}
-    .container{max-width:1000px;margin:auto;padding:20px}
 
-    /* HERO */
-    .hero{
+    *{margin:0;padding:0;box-sizing:border-box}
+
+    body{
+      font-family:Inter,sans-serif;
+      background:linear-gradient(#120c09,#0b0705);
+      color:var(--text);
+    }
+
+    header{
       height:80vh;
       display:flex;
       align-items:center;
       justify-content:center;
       text-align:center;
-      background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.8)),url('https://images.unsplash.com/photo-1568901346375-23c9450c58cd') center/cover;
-      animation:fadeIn 1.5s ease;
+      background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.85)),url('https://images.unsplash.com/photo-1568901346375-23c9450c58cd') center/cover;
+      animation:fadeIn 1.2s ease;
     }
-    .hero h1{
+
+    header h1{
       font-family:Cinzel,serif;
-      font-size:clamp(2.5rem,8vw,5rem);
+      font-size:clamp(3rem,8vw,5rem);
       letter-spacing:2px;
     }
-    .hero span{color:var(--gold);display:block;font-size:1rem;margin-top:10px}
 
-    /* SECTION */
+    header span{
+      display:block;
+      margin-top:10px;
+      color:var(--gold);
+      font-size:1rem;
+    }
+
+    .container{
+      max-width:1000px;
+      margin:auto;
+      padding:25px;
+    }
+
     h2{
       margin:40px 0 15px;
       font-family:Cinzel,serif;
@@ -41,24 +58,31 @@
       letter-spacing:1px;
     }
 
-    /* ITEM */
     .item{
       display:flex;
       justify-content:space-between;
       padding:15px;
-      margin-bottom:10px;
+      margin-bottom:12px;
       border-radius:12px;
       background:var(--card);
-      transition:0.3s;
+      transition:0.3s ease;
+      animation:fadeUp 0.6s ease;
     }
-    .item:hover{
-      transform:translateY(-3px);
-      background:#1b140f;
-    }
-    .item small{color:var(--muted)}
-    .price{color:var(--gold);font-weight:bold}
 
-    /* FOOTER */
+    .item:hover{
+      transform:translateY(-4px);
+      background:#1c140f;
+    }
+
+    .item small{
+      color:var(--muted);
+    }
+
+    .price{
+      color:var(--gold);
+      font-weight:700;
+    }
+
     footer{
       text-align:center;
       padding:30px 20px;
@@ -68,13 +92,16 @@
       font-size:0.9rem;
     }
 
-    /* ANIM */
     @keyframes fadeIn{
       from{opacity:0;transform:translateY(20px)}
       to{opacity:1;transform:translateY(0)}
     }
 
-    /* MOBILE */
+    @keyframes fadeUp{
+      from{opacity:0;transform:translateY(15px)}
+      to{opacity:1;transform:translateY(0)}
+    }
+
     @media(max-width:600px){
       .item{flex-direction:column;gap:5px}
     }
@@ -82,12 +109,12 @@
 </head>
 <body>
 
-<div class="hero">
+<header>
   <div>
     <h1>Burger Mania</h1>
     <span>Street Food Premium • Saveurs Orientales</span>
   </div>
-</div>
+</header>
 
 <div class="container">
 
@@ -106,4 +133,23 @@
 <div class="item"><div>Wrap Andalou<br><small>Poulet mariné, fromage, sauce andalouse</small></div><div class="price">8,50€</div></div>
 
 <h2>Assiettes</h2>
-<div class="item"><div>Assiette Kebab<br><small>Kebab, frites, salade, pain ch
+<div class="item"><div>Assiette Kebab<br><small>Kebab, frites, salade, pain chaud</small></div><div class="price">13,50€</div></div>
+<div class="item"><div>Mix Grill<br><small>Poulet, kebab, kefta, riz parfumé</small></div><div class="price">15,90€</div></div>
+
+<h2>Boissons</h2>
+<div class="item"><div>Coca-Cola</div><div class="price">2,50€</div></div>
+<div class="item"><div>Eau</div><div class="price">2,00€</div></div>
+
+<h2>Desserts</h2>
+<div class="item"><div>Tiramisu</div><div class="price">4,90€</div></div>
+<div class="item"><div>Baklava</div><div class="price">4,50€</div></div>
+
+</div>
+
+<footer>
+Burger Mania • Strasbourg<br>
+Sur place • À emporter • Livraison
+</footer>
+
+</body>
+</html>
